@@ -3,12 +3,14 @@ package vttp2022.csf.assessment.server.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import vttp2022.csf.assessment.server.models.Comment;
 import vttp2022.csf.assessment.server.models.Restaurant;
 import vttp2022.csf.assessment.server.repositories.MapCache;
 import vttp2022.csf.assessment.server.repositories.RestaurantRepository;
 
+@Service
 public class RestaurantService {
 
 	@Autowired
