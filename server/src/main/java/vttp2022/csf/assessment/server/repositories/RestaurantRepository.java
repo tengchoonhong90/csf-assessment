@@ -69,7 +69,7 @@ public class RestaurantRepository {
 			Query q = Query.query(c);
 			q.fields()
 				.exclude("_id")
-				.include("restaurant_id", "name", "cuisine", "address", "borough");
+				.include("restaurant_id", "name", "cuisine", "address");
 
 		return null;
 	}
