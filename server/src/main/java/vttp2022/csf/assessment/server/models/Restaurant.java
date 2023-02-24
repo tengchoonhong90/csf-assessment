@@ -55,7 +55,12 @@ public class Restaurant {
 	}
     public static Restaurant create(Document doc) {
 		final Restaurant restaurant = new Restaurant();
+		restaurant.setRestaurantId(doc.getString("restaurant_id"));
 		restaurant.setName((doc.getString("name")));
+		restaurant.setCuisine(doc.getString("cuisine"));
+
+		String add = doc.getString("address.building") + ", " + doc.getString(("address.street")) + ", " + doc.getString("address.zipcode") + ", " + doc.getString("borough");
+		restaurant.setAddress(add);
 
         return restaurant;
     }

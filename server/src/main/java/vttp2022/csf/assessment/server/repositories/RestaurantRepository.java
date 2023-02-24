@@ -3,6 +3,7 @@ package vttp2022.csf.assessment.server.repositories;
 import java.util.List;
 import java.util.Optional;
 
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -57,10 +58,20 @@ public class RestaurantRepository {
 	// You can add any parameters (if any) 
 	// DO NOT CHNAGE THE METHOD'S NAME OR THE RETURN TYPE
 	// Write the Mongo native query above for this method
-	//  
-	public Optional<Restaurant> getRestaurant(???) {
-		// Implmementation in here
-		
+	// db.restaurants.find(
+	//     { "name": "query_name"},
+	//     { _id: 0, "restaurant_id": 1, "name": 1, "cuisine": 1, "address": 1, "borough": 1}
+	// )
+	public Optional<Restaurant> getRestaurant(String name) {
+	// 	// Implmementation in here
+		Criteria c = Criteria.where("name")
+			.in(name);
+			Query q = Query.query(c);
+			q.fields()
+				.exclude("_id")
+				.include("restaurant_id", "name", "cuisine", "address", "borough");
+
+		return null;
 	}
 
 	// TODO Task 5

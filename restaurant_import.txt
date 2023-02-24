@@ -1,3 +1,3 @@
 TODO: Task 1 - Write the mongo import command here
 
-mongoimport --uri "mongodb://mongo:ksarIxo18ueHfZbhDJYl@containers-us-west-54.railway.app:6327" --drop --file restaurants.json --jsonArray
+mongoimport --uri "mongodb://mongo:MONGOPASSWORD@containers-us-west-54.railway.app:6327" --drop --file restaurants.json --jsonArray
