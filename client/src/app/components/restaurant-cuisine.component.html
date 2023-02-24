@@ -1,1 +1,8 @@
-<p>restaurant-cuisine works!</p>
+<div id="main">
+    <h1>List of Asian Restaurants</h1>
+    <div *ngFor="let r of restaurants; let idx = index">
+        <button [routerLink]="['/api/restaurant/{{r.name}}']"
+        >{{r.name}}</button>
+    </div>
+    <button [routerLink]="['api/cuisines']">Back</button>
+</div>>

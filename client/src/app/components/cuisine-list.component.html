@@ -1,5 +1,8 @@
-<h1>List of Cuisines</h1>
+<div id="main">
+    <h1>List of Cuisines</h1>
 
-<div *ngFor="let i of cuisines; let idx = index">
-    <h3>{{i.cuisine}}</h3>
+    <div *ngFor="let i of cuisines; let idx = index">
+        <button [routerLink]="['/api/{{i.cuisine}}/restaurants']"
+        >{{i.cuisine}}</button>
+    </div>
 </div>

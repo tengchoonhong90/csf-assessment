@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { Restaurant, Comment } from './models'
-import {} from "rxjs"
+import { Restaurant, Comment, Cuisines } from './models'
+import { firstValueFrom } from "rxjs"
 
 @Injectable()
 export class RestaurantService {
@@ -12,9 +12,11 @@ export class RestaurantService {
 	// Use the following method to get a list of cuisines
 	// You can add any parameters (if any) and the return type 
 	// DO NOT CHNAGE THE METHOD'S NAME
-	public getCuisineList() {
+	getCuisineList(): Promise<Cuisines[]> {
 		// Implememntation in here
-
+		return firstValueFrom(
+			this.http.get<Cuisines[]>('api/cuisines')
+		);
 	}
 
 	// TODO Task 3 
